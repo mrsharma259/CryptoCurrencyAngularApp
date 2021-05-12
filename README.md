@@ -1,2 +1,0 @@
-# CyrptoCurrencies
-Crypto Currency Project
