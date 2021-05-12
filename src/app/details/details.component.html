@@ -1,0 +1,28 @@
+<div class="form-gorup row">
+    <!-- <label class = "col-m-2 col-form-label">Crypto Tracker</label> -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{details.name}} | {{details.symbol}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Price: ${{details.price | number: '1.1-2'}}</td>                
+            </tr>
+            <tr>
+                <td>24-Hour Volume: {{details.volume | number: '1.1-2'}}</td>                
+            </tr>
+            <tr>
+                <td>$100 = {{100 / coins}} coins</td>                
+            </tr>
+            <tr>
+                <td>$250 = {{250 / coins}} coins</td>                
+            </tr>
+            <tr>
+                <td>$5,000 = {{5000 / coins}} coins</td>                
+            </tr>
+        </tbody>
+    </table>
+</div>    
+

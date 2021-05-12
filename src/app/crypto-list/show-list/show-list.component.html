@@ -1,0 +1,45 @@
+  <!-- Modal -->
+  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="font-weight: bold; font-size: large;">Coin Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          (click)="closeClick()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <app-details [det]="det" *ngIf="ActivateDetailsComp"></app-details>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Coin Name</th>
+            <th>Symbol</th>
+            <th>Latest Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor ="let dataItem of CryptoList">
+            <td>{{dataItem.name}}</td>
+            <td>{{dataItem.symbol}}</td>
+            <td>${{dataItem.price | number: '1.1-2'}}</td>
+            <td>
+                <button type="button" class="btn btn-light mr-1"
+                data-toggle="modal" data-target="#exampleModal"
+                (click)="detailsClick(dataItem)"
+                data-backdrop="static" data-keyboard="false" 
+                style="background-color: #6c757d; color: #f8f9fa">
+                    Details
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
